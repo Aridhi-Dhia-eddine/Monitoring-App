@@ -1,0 +1,20 @@
+<div class="container mt-3">
+    <h2>Journal alarme</h2>
+    <p>vous trouverez ici tout les alrmes des fichiers logs</p>            
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>désignation alarme </th>
+          <th>type alarme</th>
+          <th>mot clé</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let alarme of alarmes">
+          <td>{{alarme.mc.designation}}</td>
+          <td>{{alarme.mc.niveau}}</td>
+          <td>{{alarme.mc.mot}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

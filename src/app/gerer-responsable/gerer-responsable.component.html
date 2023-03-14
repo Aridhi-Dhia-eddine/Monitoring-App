@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+<body>
+
+    <div class="container-fluid mt-3 form col-5">
+      <h2>Ajout Responsable</h2>
+      <form class="f" action="/action_page.php">
+        <div class="mb-3 mt-3 "><br>
+          <label for="nom">Nom Responsable</label>
+          <input type="text" class="form-control" id="nom" placeholder="Entrez un nom Responsable" name="nom">
+        </div>
+        <div class="mb-3 mt-3 "><br>
+            <label for="prenom">Prénom Responsable</label>
+            <input type="text" class="form-control" id="prenom" placeholder="Entrez un Prénom Responsable" name="prenom">
+        </div>
+        <div class="mb-3 mt-3 "><br>
+            <label for="email">Email Responsable</label>
+            <input type="email" class="form-control" id="email" placeholder="Entrez Email Responsable" name="email">
+        </div>
+        <div class="mb-3 mt-3 "><br>
+            <label for="numero">N°tel Responsable</label>
+            <input type="tel" class="form-control" id="numero" placeholder="Entrez numéro Responsable" name="numero">
+        </div>
+
+          <div class="mb-3 mt-3 bt">
+            <button type="submit" class="btn btn-primary col-6 ">Ajouter Responsable</button>
+          </div>
+      </form>
+    </div>
+    <br/>
+    <br/>
+    <div class="container mt-3">  
+      <h3>Consulter les Responsables...</h3> <br>         
+        <table class="table table-hover tb table">                                                                                                                                                                                                                                                                                   
+          <thead>
+            <tr>
+              <th>Nom Responsable</th>
+              <th>Prénom Responsable</th>
+              <th>Email</th>
+              <th>N°tel</th>
+              <th>Actions</th>
+                
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>testeur</td>
+              <td>Ben testeur</td>
+              <td>test@gmail.com</td>
+              <td>98756221</td>
+              <td>
+                <div class="row">
+                  <div class="col">
+                    <button class="btn btn-primary">modifier</button>
+                  </div>
+                  <div class="col">
+                    <button class="btn btn-danger">Supprimer</button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    
+    </body>

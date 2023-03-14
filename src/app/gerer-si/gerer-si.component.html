@@ -1,0 +1,58 @@
+<app-navbar></app-navbar>
+<body>
+
+    <div class="container-fluid mt-3 form col-5">
+      <h2>Ajout système d'information</h2>
+      <form class="f" action="/action_page.php">
+        <div class="mb-3 mt-3 "><br>
+          <label for="email">Nom système information</label>
+          <input type="email" class="form-control" id="email" placeholder="Entrez un nom de système d'information" name="email">
+        </div>
+        <label for="email">Responsable</label>
+        <select class="form-select fs  col-6">
+            <option>Responsable1</option>
+            <option>Responsable2</option>
+            <option>Responsable3</option>
+            <option>Responsable4</option>
+          </select>
+
+
+        <div class="mb-3 mt-3 ">
+            <label for="comment">description:</label>
+            <textarea class="form-control" rows="5" id="description" name="text"></textarea>
+          </div>
+          <div class="mb-3 mt-3 bt">
+            <button type="submit" class="btn btn-primary col-6 ">Ajouter Système</button>
+          </div>
+      </form>
+    </div>
+    <br/>
+    <br/>
+    <div class="container mt-3">  
+      <h3>Consulter les systèmes d'informations...</h3> <br>         
+        <table class="table table-hover tb">                                                                                                                                                                                                                                                                                   
+          <thead>
+            <tr>
+              <th>Nom système</th>
+              <th>Actions</th>  
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Système1</td>
+              <td>
+                <div class="row">
+                  <div class="col">
+                    <button class="btn btn-primary">modifier</button>
+                  </div>
+                  <div class="col">
+                    <button class="btn btn-danger">Supprimer</button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    
+    </body>
