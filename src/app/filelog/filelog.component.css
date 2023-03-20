@@ -1,0 +1,92 @@
+.titre {
+    text-align: center;
+
+        font-size: 36px; /* Taille de police */
+        font-weight: bold; /* Poids de la police */
+        color: #333; /* Couleur du texte */
+        text-align: center; /* Alignement du texte */
+        margin-top: 20px; /* Marge supérieure */
+        margin-bottom: 20px; /* Marge inférieure */
+        text-transform: uppercase; /* Transformation de texte en majuscules */
+    
+      
+  }
+
+  .card {
+    width: 500px; /* Définir une largeur pour la carte */
+    margin: 0 auto; /* Mettre une marge automatique sur les côtés gauche et droit */
+    background-color: #f1f1f1;
+    padding: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 100%;
+    background-color: #7f82d4;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #7f82d4;
+  }
+  
+  .btn-group .button1 {
+    background-color: #4CAF50; /* Green */
+    border: 1px solid green;
+    color: white;
+    margin: 10px 0;
+
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    float: left;
+  }
+
+  .btn-group .button2 {
+    background-color: #ec5757; /* Green */
+    border: 1px solid red;
+    color: white;
+    margin: 10px 0;
+
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    float: left;
+  }
+  table, th, td {
+    border: 1px solid;
+  }
+  
+
+
+  
+  .btn-group .button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+  }
+  
+  .btn-group .button:hover {
+    background-color: #3e8e41;
+  }
+
+  .table{
+    width: 97%;
+  }
+ 

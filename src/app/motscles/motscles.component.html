@@ -1,0 +1,106 @@
+<app-navbar></app-navbar>
+
+<body>
+  <div class="container-fluid mt-3 form col-5">
+    
+
+    <h2 class="titre" style="font-size:2vw;"> Ajouter mots cles</h2>
+
+            <form action="/action_page.php">
+                <label for="fname">Mot Cle :</label>
+                <input type="text" id="fname" name="fname"><br><br>
+                <label for="lname">Niveau :</label>
+    <select id="Niveau" name="Niveau">
+      <option value="Minneur">Choisir Niveau</option>
+
+      <option value="Minneur">Minneur</option>
+      <option value="Moyenne">Moyenne</option>
+      <option value="Majeur">Majeur</option>
+      <option value="Warning">Warning</option>
+
+    </select> <br><br>
+                <label for="lname" >Designation :</label>
+                <input type="text" id="lname" name="lname"><br><br>
+                <label for="lname" >fichie log :</label>
+
+                <select id="Niveau" name="FIchierlog">
+                  <option value="Minneur">Choisir fichier log</option>
+            
+                  <option value="f8">f7</option>
+                  <option value="f4">f4</option>
+                  <option value="f2">f2</option>
+                  <option value="f5">f5</option>
+            
+                </select><br><br>
+                <input type="submit" value="Ajouter">
+              </form>
+            </div> 
+<br>
+
+            <div class="container mt-3">
+              <h2 class="titre" style="font-size:2vw;"> Liste Mots cles</h2>
+              <br><br> 
+              <table class="table table-hover tb">                                                                                                                                                                                                                                                                                   
+                <thead>
+                    <tr>
+                      <th>Mot Cle </th>
+                      <th>Niveau </th>
+                      <th>Fichier log</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Test</td>
+                      <td>Test</td>
+                      <td>Test</td>
+                      <td>
+                        <div class="row">
+                          <div class="col">
+                            <button class="btn btn-primary">modifier</button>
+                          </div>
+                          <div class="col">
+                            <button class="btn btn-danger">Supprimer</button>
+                          </div>
+                        </div>
+                      </td>
+
+
+                    </tr>
+                    <tr>
+                        <td>Test</td>
+                        <td>Test</td>
+                        <td>Test</td>
+                        <td>
+                          <div class="row">
+                            <div class="col">
+                              <button class="btn btn-primary">modifier</button>
+                            </div>
+                            <div class="col">
+                              <button class="btn btn-danger">Supprimer</button>
+                            </div>
+                          </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Test</td>
+                        <td>Test</td>
+                        <td>Test</td>
+                        <td>
+                          <div class="row">
+                            <div class="col">
+                              <button class="btn btn-primary">modifier</button>
+                            </div>
+                            <div class="col">
+                              <button class="btn btn-danger">Supprimer</button>
+                            </div>
+                          </div>
+                        </td>
+                    </tr>
+
+                  
+                  
+                  </tbody>
+                </table>
+              </div>
+</body>

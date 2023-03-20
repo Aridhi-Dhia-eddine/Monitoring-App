@@ -1,0 +1,23 @@
+h2{
+	text-align: center;
+	color: #F09141;
+ }
+ .bt{
+    text-align: center;
+}
+.form{
+    margin-left:30%;
+    border: 2px black;
+    
+    
+}
+
+.table-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+  }
+  
+  table {
+	height: 100vh;  }

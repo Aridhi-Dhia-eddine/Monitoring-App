@@ -1,0 +1,62 @@
+<app-navbar></app-navbar>
+
+<body>
+  <div class="container-fluid mt-3 form col-5">
+
+    <h2 class=" titre text-center text-lg-left text-sm" style="font-size:2vw;">Ajout Serveur</h2>
+
+
+            <form action="/action_page.php">
+                <label for="fname">Nom Host :</label>
+                <input type="text" id="fname" name="fname"><br><br>
+               
+                <label for="lname" >Adress IP:</label>
+                <input type="text" id="lname" name="lname"><br><br>
+                <label for="lname">Choisir un SI:</label>
+                <select id="Choisir un SI" name="SI">
+                  <option value="Minneur">SI 1 </option>
+                  <option value="Moyenne">SI 17</option>
+                  <option value="Majeur">SI 3</option>
+                  <option value="Warning">SI 14</option>
+            
+                </select> <br><br>
+               
+                <input type="submit" value="Ajouter">
+              </form>
+            </div> 
+
+<br><br>
+            <div class="container mt-3">
+              <h2 class="titre" style="font-size:2vw;"> Liste des Serveurs</h2>
+              <br><br>
+              
+                 
+                  <table class="table table-hover tb">                                                                                                                                                                                                                                                                                   
+                    <thead>
+                      <tr>
+                        <th>Nom Serveur</th>
+                        <th> Adresse IP</th>
+                        <th>Actions</th>  
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Test</td>
+                        <td>Test</td>
+
+                        <td>
+                          <div class="row">
+                            <div class="col">
+                              <button class="btn btn-primary">modifier</button>
+                            </div>
+                            <div class="col">
+                              <button class="btn btn-danger">Supprimer</button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+</body>

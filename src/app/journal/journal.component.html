@@ -1,3 +1,6 @@
+<app-navbar></app-navbar>
+
+
 <div class="container mt-3">
     <h2>Journal alarme</h2>
     <p>vous trouverez ici tout les alrmes des fichiers logs</p>            
@@ -7,6 +10,8 @@
           <th>désignation alarme </th>
           <th>type alarme</th>
           <th>mot clé</th>
+          <th>Etat</th>
+
         </tr>
       </thead>
       <tbody>
@@ -14,6 +19,7 @@
           <td>{{alarme.mc.designation}}</td>
           <td>{{alarme.mc.niveau}}</td>
           <td>{{alarme.mc.mot}}</td>
+          <td>ouverte</td>
         </tr>
       </tbody>
     </table>
