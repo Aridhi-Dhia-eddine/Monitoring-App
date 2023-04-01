@@ -1,29 +1,37 @@
 <app-navbar></app-navbar>
 <body>
-
+  <br>
+  <div *ngIf="alert" class="col-6 alert alert-success alert-dismissible" style="margin-left: 25%;">
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    <strong>Succès!</strong> Responsable ajouté avec succès.
+  </div>
+  <div *ngIf="alertt" class="col-6 alert alert-danger alert-dismissible" style="margin-left: 25%;">
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    <strong>Attention!</strong> Responsable inscrit déja.
+  </div>
     <div class="container-fluid mt-3 form col-5">
       <h2>Ajout Responsable</h2>
-      <form class="f" action="/action_page.php">
+      <form [formGroup]="ajoutResp" class="f" (ngSubmit) = "onSubmit()" >
 
         <div class="mb-3 mt-3 ">
           <label for="nom">Matricule</label>
-          <input type="text" class="form-control" id="nom" placeholder="Matricule" name="nom">
+          <input type="text" class="form-control"  id="nom" [ngModelOptions]="{standalone: true}" [(ngModel)] = "responsable.matricule" placeholder="Matricule" FormControlName="matricule" name="matricule">
         </div>
         <div class="mb-3 mt-3 "><br>
           <label for="nom">Nom Responsable</label>
-          <input type="text" class="form-control" id="nom" placeholder="Entrez un nom Responsable" name="nom">
+          <input type="text" class="form-control" id="nom" [ngModelOptions]="{standalone: true}" [(ngModel)] = "responsable.nom_user" FormControlName="nom"  placeholder="Entrez un nom Responsable" name="nom">
         </div>
         <div class="mb-3 mt-3 "><br>
             <label for="prenom">Prénom Responsable</label>
-            <input type="text" class="form-control" id="prenom" placeholder="Entrez un Prénom Responsable" name="prenom">
+            <input type="text" class="form-control" id="prenom" [ngModelOptions]="{standalone: true}" [(ngModel)] = "responsable.prenom_user" FormControlName="prenom"  placeholder="Entrez un Prénom Responsable" name="prenom">
         </div>
         <div class="mb-3 mt-3 "><br>
             <label for="email">Email Responsable</label>
-            <input type="email" class="form-control" id="email" placeholder="Entrez Email Responsable" name="email">
+            <input type="email" class="form-control" id="email" [ngModelOptions]="{standalone: true}" [(ngModel)] = "responsable.mail_user" FormControlName="mail" placeholder="Entrez Email Responsable" name="email">
         </div>
         <div class="mb-3 mt-3 "><br>
             <label for="numero">N°tel Responsable</label>
-            <input type="tel" class="form-control" id="numero" placeholder="Entrez numéro Responsable" name="numero">
+            <input type="tel" class="form-control" id="numero" [ngModelOptions]="{standalone: true}" [(ngModel)] = "responsable.num_tel" FormControlName="tel"  placeholder="Entrez numéro Responsable" name="numero">
         </div>
 
           <div class="mb-3 mt-3 bt">
@@ -47,11 +55,11 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>testeur</td>
-              <td>Ben testeur</td>
-              <td>test@gmail.com</td>
-              <td>98756221</td>
+            <tr *ngFor="let resp of responsables">
+              <td>{{resp.nom_user}}</td>
+              <td>{{resp.prenom_user}}</td>
+              <td>{{resp.mail_user}}</td>
+              <td>{{resp.num_tel}}</td>
               <td>
                 <div class="row">
                   <div class="col">

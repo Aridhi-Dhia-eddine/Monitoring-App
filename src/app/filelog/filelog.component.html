@@ -7,12 +7,30 @@
 
     <h2 class=" titre text-center text-lg-left text-sm" style="font-size:2vw;">Ajouter des fichiers Logs</h2>
 
-            <form action="/action_page.php">
+            <form (ngSubmit) = "onSubmit()">
                 <label for="fname">Nom file:</label>
-                <input type="text" id="fname" name="fname"><br><br>
+                <input type="text" [(ngModel)]="lf.lastFile" [ngModelOptions]="{standalone: true}" id="fname" name="fname"><br><br>
                
                 <label for="lname" >Chemin absolu :</label>
-                <input type="text" id="lname" name="lname"><br><br>
+                <input type="text" [(ngModel)]="lf.cheminAb" [ngModelOptions]="{standalone: true}" id="lname" name="lname"><br><br>
+
+                <label for="email">Type de fichier</label>
+                <select [(ngModel)]="lf.type" (ngModelChange)="onSel()" [ngModelOptions]="{standalone: true}" class="form-select fs  col-6" >
+                  <option [value] =0 >Statique</option>
+                  <option [value]=1>Dinamique</option>
+                </select>
+
+                <label for="email">OS:</label>
+                <select [(ngModel)]="lf.os" (ngModelChange)="onSe()" [ngModelOptions]="{standalone: true}" class="form-select fs  col-6" >
+                    <option [value] =0>Windows</option>
+                    <option [value] =1>Linux</option>
+                </select>
+
+                <label for="email">Serveur</label>
+                <select [(ngModel)]="id" (ngModelChange)="onS()" [ngModelOptions]="{standalone: true}" class="form-select fs  col-6" >
+                    <option *ngFor="let s of serveurs" [value]="s.idServeur" >{{s.nomHost}}</option>
+                </select>
+
                 <input type="submit" value="Ajouter">
               </form>
             </div>
@@ -31,12 +49,11 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>Test</td>
-                      <td>Test</td>
-                      <td>Test</td>
-
-                      <td>Test</td>
+                    <tr *ngFor="let log of logs">
+                      <td>{{log.c_date}}</td>
+                      <td>{{log.lastFile}}</td>
+                      <td>{{log.cheminAb}}</td>
+                      <td>{{log.lastLine}}</td>
                       <td>
                         <div class="row">
                           <div class="col-3">
@@ -47,46 +64,7 @@
                           </div>
                         </div>
                       </td>
-
-
-                    </tr>
-                    <tr>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td>Test</td>
-
-                        <td>
-                          <div class="row">
-                            <div class="col-3">
-                              <button class="btn btn-primary">modifier</button>
-                            </div>
-                            <div class="col-3">
-                              <button class="btn btn-danger">Supprimer</button>
-                            </div>
-                          </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td>Test</td>
-
-                        <td>
-                          <div class="row">
-                            <div class="col-3">
-                              <button class="btn btn-primary">modifier</button>
-                            </div>
-                            <div class="col-3">
-                              <button class="btn btn-danger">Supprimer</button>
-                            </div>
-                          </div>
-                        </td>
-                    </tr>
-
-                  
-                  
+                    </tr>      
                   </tbody>
                 </table>
               </div>

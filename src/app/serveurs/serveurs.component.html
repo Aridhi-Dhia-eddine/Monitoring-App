@@ -6,18 +6,15 @@
     <h2 class=" titre text-center text-lg-left text-sm" style="font-size:2vw;">Ajout Serveur</h2>
 
 
-            <form action="/action_page.php">
+            <form (ngSubmit) = "onSubmit()">
                 <label for="fname">Nom Host :</label>
-                <input type="text" id="fname" name="fname"><br><br>
+                <input type="text" [(ngModel)]="s.nomHost" id="fname" name="fname"><br><br>
                
                 <label for="lname" >Adress IP:</label>
-                <input type="text" id="lname" name="lname"><br><br>
+                <input type="text" [(ngModel)]="s.ip" id="lname" name="lname"><br><br>
                 <label for="lname">Choisir un SI:</label>
-                <select id="Choisir un SI" name="SI">
-                  <option value="Minneur">SI 1 </option>
-                  <option value="Moyenne">SI 17</option>
-                  <option value="Majeur">SI 3</option>
-                  <option value="Warning">SI 14</option>
+                <select id="Choisir un SI" [(ngModel)]="id" (ngModelChange)="onSelect()" name="id">
+                  <option [value]="s.idSI" *ngFor="let s of sis">{{s.nom_Si}}</option>
             
                 </select> <br><br>
                
@@ -40,9 +37,9 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>Test</td>
-                        <td>Test</td>
+                      <tr *ngFor="let serv of serveurs">
+                        <td>{{serv.nomHost}}</td>
+                        <td>{{serv.ip}}</td>
 
                         <td>
                           <div class="row">

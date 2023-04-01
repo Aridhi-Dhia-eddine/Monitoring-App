@@ -14,7 +14,7 @@ import { FilelogComponent } from './filelog/filelog.component';
 import { LogiinComponent } from './logiin/logiin.component';
 import { MotsclesComponent } from './motscles/motscles.component';
 import { ServeursComponent } from './serveurs/serveurs.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,6 +35,8 @@ import { ServeursComponent } from './serveurs/serveurs.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

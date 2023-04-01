@@ -6,34 +6,36 @@
 
     <h2 class="titre" style="font-size:2vw;"> Ajouter mots cles</h2>
 
-            <form action="/action_page.php">
-                <label for="fname">Mot Cle :</label>
-                <input type="text" id="fname" name="fname"><br><br>
-                <label for="lname">Niveau :</label>
-    <select id="Niveau" name="Niveau">
-      <option value="Minneur">Choisir Niveau</option>
+    <form (ngSubmit) = "onSubmit()">
+        <label for="fname">Mot Cle :</label>
+        <input type="text" [(ngModel)]="mc.mot" id="fname" name="fname"><br><br>
+          <label for="lname" >Designation :</label>
+          <input type="text" [(ngModel)]="mc.designation" id="lname" name="lname"><br><br>
+          <label for="lname" >fichier log :</label>
+<!--          <select (ngModelChange)="onSeli()" [(ngModel)]="id" name="FIchierlog" [ngModelOptions]="{standalone: true}">
+            <option [value]="e.idlogs" *ngFor="let e of lf">{{e.lastFile}}</option>       
+          </select>-->
+        <!--  <select name="id" class="form-select fs  col-6" (ngModelChange)="onSeli()" [(ngModel)]="id"  id="id">
+            <option *ngFor=" let l of lf " [value]="l.idlogs">{{l.lastFile}}</option>
+          </select> -->
 
-      <option value="Minneur">Minneur</option>
-      <option value="Moyenne">Moyenne</option>
-      <option value="Majeur">Majeur</option>
-      <option value="Warning">Warning</option>
+          <select class="form-select fs  col-6" [(ngModel)]="id" (ngModelChange)="onSeli()" [ngModelOptions]="{standalone: true}">
+            <option [value]="l.idlogs" *ngFor="let l of lf">{{l.lastFile}}</option>
+          </select>
 
-    </select> <br><br>
-                <label for="lname" >Designation :</label>
-                <input type="text" id="lname" name="lname"><br><br>
-                <label for="lname" >fichie log :</label>
+          <label for="lname">Niveau :</label>
+          <select id="Niveau" (ngModelChange)="onSe()" [(ngModel)]="mc.niveau" name="Niveau">
+            <option value="Minneur">Choisir Niveau</option>
+            <option [value]=0>Warning</option>
+            <option [value]=1>Minneur</option>
+            <option [value]=2>Moyenne</option>
+            <option [value]=3>Majeur</option>
+          </select> <br><br>
 
-                <select id="Niveau" name="FIchierlog">
-                  <option value="Minneur">Choisir fichier log</option>
-            
-                  <option value="f8">f7</option>
-                  <option value="f4">f4</option>
-                  <option value="f2">f2</option>
-                  <option value="f5">f5</option>
-            
-                </select><br><br>
-                <input type="submit" value="Ajouter">
-              </form>
+          <div class="mb-3  ">
+            <button type="submit" class="btn btn-primary col-6 ">Ajouter Mot clé</button>
+          </div>
+    </form>
             </div> 
 <br>
 
@@ -50,10 +52,10 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>Test</td>
-                      <td>Test</td>
-                      <td>Test</td>
+                    <tr *ngFor="let mot of mots">
+                      <td>{{mot.mot}}</td>
+                      <td>{{mot.niveau}}</td>
+                      <td>{{mot.lf.lastFile}}</td>
                       <td>
                         <div class="row">
                           <div class="col">
@@ -64,42 +66,7 @@
                           </div>
                         </div>
                       </td>
-
-
                     </tr>
-                    <tr>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td>
-                          <div class="row">
-                            <div class="col">
-                              <button class="btn btn-primary">modifier</button>
-                            </div>
-                            <div class="col">
-                              <button class="btn btn-danger">Supprimer</button>
-                            </div>
-                          </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td>
-                          <div class="row">
-                            <div class="col">
-                              <button class="btn btn-primary">modifier</button>
-                            </div>
-                            <div class="col">
-                              <button class="btn btn-danger">Supprimer</button>
-                            </div>
-                          </div>
-                        </td>
-                    </tr>
-
-                  
-                  
                   </tbody>
                 </table>
               </div>
