@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+<body>
+    <div class="container">
+
+      
+      
+        <div class="container-fluid mt-3 form col-5">
+
+          <h2>Changement de mot de passe</h2>
+          <form (ngSubmit) = "ok()">
+            <div class="mb-3 mt-3 "><br>
+              <div class="form-group">
+                <label for="nom"> Adresse:</label>
+                <input class="form-control" id="nom" type="mail" name="mmaail" [(ngModel)]="mail" required>
+              </div>
+            <div class="form-group">
+              <label for="nom">Nouveau mot de passe:</label>
+              <input  class="form-control" id="no"  type="password" name="newPassword" [(ngModel)]="pass" [ngModelOptions]="{standalone: true}" minlength="8" required>
+            </div>
+            <div class="alert alert-danger" *ngIf="inf8">
+              <strong>Danger!</strong> inférieur 8.
+            </div>
+            <div class="form-group">
+              <label for="prenom">Confirmez le nouveau mot de passe  :</label>
+              <input  class="form-control" id="prenom" type="password" name="confirmNewPassword" [(ngModel)]="passCofirm" [ngModelOptions]="{standalone: true}" minlength="8" required>
+            </div>
+            <div class="alert alert-danger" *ngIf="noConf">
+              <strong>Danger!</strong> Confirmation non identique.
+            </div>
+                <button type="submit" class="btn btn-primary">Enregistrer</button>
+
+            </div>       
+          </form>
+        </div>

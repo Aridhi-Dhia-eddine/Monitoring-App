@@ -1,0 +1,48 @@
+<body>
+  <div class="password-reset">
+    <h2>Réinitialisation de mot de passe</h2>
+    <form (ngSubmit) = "sendCode()">
+      <label>
+        Adresse email :
+        <input type="email" name="email" [(ngModel)]="mail" [ngModelOptions]="{standalone: true}" required>
+      </label>
+      <button type="submit" data-bs-toggle="modal" data-bs-target="#myModal">Envoyer</button>
+    </form>
+    <p>Un email vous sera envoyé pour réinitialiser votre mot de passe.</p>
+  </div>  
+</body>
+
+  
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Confirmation par mail</h4>
+        <button type="button" (click)="close()" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <form (ngSubmit) = "verif()">
+      <div class="modal-body">
+        
+        
+          <p>vous avez encore {{texte}} avant expédition du code</p><br>
+          <p *ngIf="alert">Fermer cette fenêtre et essayer de renvoyer un nouveau code</p>
+          <div class="input-group input-group-sm">
+            <label class="col-4" for="Code">Code reçu: </label>
+           <input type="text" class="form-control col-4" [(ngModel)]="code" [ngModelOptions]="{standalone: true}">
+           
+          </div>
+        
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button id="gee" type="submit" class="col-8" style="margin-right: 15%;">Valider</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>

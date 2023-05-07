@@ -24,4 +24,6 @@ export class MotServiceService {
   postMot(mc:Mc):Observable<Object>{
     return this.http.post("http://192.168.1.2:8787/api/monitoring/mc", mc)
   }
+
+
 }

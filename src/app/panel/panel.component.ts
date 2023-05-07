@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-panel',
@@ -11,9 +12,12 @@ export class PanelComponent implements OnInit {
   gs:string="assets/images/serveurs.png";
   glf:string="assets/images/logfile.png";
   gmc:string="assets/images/mot clé.png"
-  constructor() { }
+  paam!:any
+  constructor(public rout:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.paam = this.rout.snapshot.paramMap.get('matricule');
+    console.log(this.paam)
   }
 
 }

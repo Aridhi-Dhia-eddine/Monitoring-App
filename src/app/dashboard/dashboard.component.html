@@ -5,152 +5,45 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-lg-6">
-          <div class="alert alert-info" role="alert">
-<h1> Majeurs</h1>  <br>  <h2>11</h2>      </div> </div>
-        <div class="col-12 col-lg-6">
-          <div class="alert alert-warning" role="alert">
-           <h1>Moyennes </h1> <br> <h2>17</h2>
-          </div>
+          <a (click)="maj()">
+            <div class="alert alert-info" role="alert">
+              <h1> Majeurs</h1>  <br>  <h2>{{almajeurs}}</h2>      
+            </div> 
+          </a>
         </div>
         <div class="col-12 col-lg-6">
-          <div class="alert alert-danger" role="alert"> <h1> Minneurs</h1>
-             <br> <h2>8</h2>
-          </div>
+          <a (click)="moy()">
+            <div class="alert alert-warning" role="alert">
+              <h1>Moyennes </h1> <br> <h2>{{almoyen}}</h2>
+            </div>
+          </a>
+        </div>
+        <div class="col-12 col-lg-6">
+          <a (click)="min()">
+            <div class="alert alert-danger" role="alert"> <h1> Mineurs</h1>
+              <br> <h2>{{almineurs}}</h2>
+           </div>
+          </a>
         </div>
    
         <div class="col-12 col-lg-6">
-          <div class="alert alert-secondary" role="alert">
-                <h1> warning</h1> <br> <h2> 17</h2>
-          </div>
+          <a (click)="war()">
+            <div class="alert alert-secondary" role="alert">
+              <h1> warning</h1> <br> <h2> {{alwarning}}</h2>
+            </div>
+          </a>
         </div>
       </div>
     </div>
     
    
-    <br>
-    <div class="container mt-3">
-        <h2 class="titree">Alarmes Minneurs</h2> <br><br>
-        <table class="table table-hover tb">                                                                                                                                                                                                                                                                                   
-          <thead>
-            <tr>
-              <th>Mot Cle </th>
-              <th>Date </th>
-              <th>Serveurs</th>
-              <th>fichierlog</th>
-              <th>Actions</th>
 
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Test</td>
-              <td>2023/01/17</td>
-              <td>fichierlog</td>
-              <td>Test</td>
-
-              <td>
-                <div class="row">
-                  <div class="col">
-                  <div class="btn-group">
-
-                    <button class="button2">Consulter</button>
-
-                      
-            </div>
-                  </div> </div>
-              </td>
-
-
-            </tr>
-            <tr>
-              <td>Test</td>
-              <td>2023/01/17</td>
-              <td>fichierlog</td>
-
-              <td>Test</td>
-
-              <td>
-                <div class="row">
-                  <div class="col">
-                  <div class="btn-group">
-
-                    <button class="button2">Consulter</button>
-
-                      
-            </div>
-                  </div> </div>
-              </td>
-
-
-            </tr>
-          </tbody>
-        </table>
-    </div>
     
 
-    <div class="container mt-3">
-        <h2 class="titree">Alarmes Moyennes </h2> <br><br>
-        <table class="table table-hover tb">                                                                                                                                                                                                                                                                                   
-          <thead>
-            <tr>
-              <th>Mot Cle </th>
-              <th>Date </th>
-              <th>Serveurs</th>
-              <th>fichierlog</th>
 
-              <th>Actions</th>
-
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Test</td>
-              <td>2023/01/17</td>
-              <td>fichierlog</td>
-
-              <td>Test</td>
-
-              <td>
-                <div class="row">
-                  <div class="col">
-                  <div class="btn-group">
-
-                    <button class="button2">Consulter</button>
-
-                      
-            </div>
-                  </div> </div>
-              </td>
-
-
-            </tr>
-            <tr>
-              <td>Test</td>
-              <td>2023/01/17</td>
-              <td>fichierlog</td>
-
-              <td>Test</td>
-
-              <td>
-                <div class="row">
-                  <div class="col">
-                  <div class="btn-group">
-
-                    <button class="button2">Consulter</button>
-
-                      
-            </div>
-                  </div> </div>
-              </td>
-
-
-            </tr>
-          </tbody>
-        </table>
-    </div>
-          <div class="container mt-3">
+          <div class="container mt-3" id="maj">
             <h2 class="titree">Alarmes Majeurs</h2> <br><br>
-            <table class="table table-hover tb">                                                                                                                                                                                                                                                                                   
+            <table class="table table-hover tb" >                                                                                                                                                                                                                                                                                   
               <thead>
                 <tr>
                   <th>Mot Cle </th>
@@ -163,53 +56,109 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Test</td>
-                  <td>2023/01/17</td>
-                  <td>fichierlog</td>
-
-                  <td>Test</td>
+                <tr  *ngFor="let a of alarmeMaj">
+                  <td>{{a.mc.mot}}</td>
+                  <td>{{a.date}}</td>
+                  <td>{{a.mc.lf.serv.nomHost}}</td>
+                  <td>{{a.mc.lf.lastFile}}</td>
     
                   <td>
                     <div class="row">
                       <div class="col">
-                      <div class="btn-group">
+                        <div class="btn-group">
     
-                        <button class="button2">Consulter</button>
-    
-                          
-                </div>
-                      </div> </div>
-                  </td>
-    
-    
-                </tr>
-                <tr>
-                  <td>Test</td>
-                  <td>2023/01/17</td>
-                  <td>fichierlog</td>
-
-                 <td>Test</td>
-    
-                  <td>
-                    <div class="row">
-                      <div class="col">
-                      <div class="btn-group">
-    
-                        <button class="button2">Consulter</button>
+                          <button class="button2" (click)="view(a.idalarme)">Consulter</button>
     
                           
-                </div>
-                      </div> </div>
+                        </div>
+                      </div> 
+                    </div>
                   </td>
-    
-    
                 </tr>
               </tbody>
             </table>
         </div>
+        <br>
 
-              <div class="container mt-3">
+        <div class="container mt-3" id="moy">
+          <h2 class="titree">Alarmes Moyennes </h2> <br><br>
+          <table class="table table-hover tb">                                                                                                                                                                                                                                                                                   
+            <thead>
+              <tr>
+                <th>Mot Cle </th>
+                <th>Date </th>
+                <th>Serveurs</th>
+                <th>fichierlog</th>
+  
+                <th>Actions</th>
+  
+              </tr>
+            </thead>
+            <tbody>
+              <tr  *ngFor="let a of alarmeMoy">
+                <td>{{a.mc.mot}}</td>
+                <td>{{a.date}}</td>
+                <td>{{a.mc.lf.serv.nomHost}}</td>
+                <td>{{a.mc.lf.lastFile}}</td>
+  
+                <td>
+                  <div class="row">
+                    <div class="col">
+                      <div class="btn-group">
+  
+                        <button class="button2" (click)="view(a.idalarme)">Consulter</button>
+  
+                        
+                      </div>
+                    </div> 
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+      <br>
+
+
+      <br>
+      <div class="container mt-3" id="min">
+          <h2 class="titree">Alarmes Mineurs</h2> <br><br>
+          <table class="table table-hover tb">                                                                                                                                                                                                                                                                                   
+            <thead>
+              <tr>
+                <th>Mot Cle </th>
+                <th>Date </th>
+                <th>Serveurs</th>
+                <th>fichierlog</th>
+                <th>Actions</th>
+  
+              </tr>
+            </thead>
+            <tbody>
+              <tr  *ngFor="let a of alarmeMi">
+                <td>{{a.mc.mot}}</td>
+                <td>{{a.date}}</td>
+                <td>{{a.mc.lf.serv.nomHost}}</td>
+                <td>{{a.mc.lf.lastFile}}</td>
+  
+                <td>
+                  <div class="row">
+                    <div class="col">
+                      <div class="btn-group">
+  
+                        <button class="button2" (click)="view(a.idalarme)">Consulter</button>
+  
+                        
+                      </div>
+                    </div> 
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+      <br>
+              <div class="container mt-3" id="war">
                 <h2 class="titree">Alarmes warning</h2> <br><br>
                 <table class="table table-hover tb">                                                                                                                                                                                                                                                                                   
                   <thead>
@@ -224,50 +173,27 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>Test</td>
-                      <td>2023/01/17</td>
-                      <td>fichierlog</td>
-
-                      <td>Test</td>
+                    <tr  *ngFor="let a of alarmeWar">
+                      <td>{{a.mc.mot}}</td>
+                      <td>{{a.date}}</td>
+                      <td>{{a.mc.lf.serv.nomHost}}</td>
+                      <td>{{a.mc.lf.lastFile}}</td>
         
                       <td>
                         <div class="row">
                           <div class="col">
-                          <div class="btn-group">
+                            <div class="btn-group">
         
-                            <button class="button2">Consulter</button>
-        
-                              
-                    </div>
-                          </div> </div>
-                      </td>
-        
-        
-                    </tr>
-                    <tr>
-                      <td>Test</td>
-                      <td>2023/01/17</td>
-                      <td>fichierlog</td>
-
-                      <td>Test</td>
-        
-                      <td>
-                        <div class="row">
-                          <div class="col">
-                          <div class="btn-group">
-        
-                            <button class="button2">Consulter</button>
+                              <button class="button2" (click)="view(a.idalarme)">Consulter</button>
         
                               
-                    </div>
-                          </div> </div>
+                            </div>
+                          </div> 
+                        </div>
                       </td>
-        
-        
                     </tr>
                   </tbody>
                 </table>
             </div>
-                </body>
+</body>
           

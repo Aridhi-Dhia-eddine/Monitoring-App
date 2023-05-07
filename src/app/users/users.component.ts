@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Users } from '../users';
 import { usersServiceService } from '../users-service.service';
 import { FormControl, FormGroup } from '@angular/forms';
+import * as CryptoJS from 'crypto-js';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -42,7 +43,7 @@ ajoutUser(){
     this.user.type=1
     
   }
-  
+  this.user.password=CryptoJS.SHA256(this.user.password.toString()+ "serviceSalt").toString(CryptoJS.enc.Hex);
   this.userService.getUserById(this.user.matricule).subscribe((data)=>{this.userResp=data
     this.ajoutUserr.reset({})
   })

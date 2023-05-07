@@ -3,7 +3,7 @@
 <div class="container mt-3"> 
     <div class="row">
         <div class="col">
-            <a routerLink="/users">
+            <a [routerLink]="['/users',paam]">
                 <div class="card col-10 bg-primary">
                     <div class="card-header"><img [src]="gu" class="gg"></div>
                     <div class="card-footer">Gérer Users</div>
@@ -11,7 +11,7 @@
             </a>
         </div>
         <div class="col">
-            <a routerLink="/responsable">
+            <a [routerLink]="['/responsable',paam]">
 
                 <div class="card col-10 bg-success">
                     <div class="card-header"><img [src]="gu" class="gg"></div>
@@ -22,7 +22,7 @@
     </div>
     <div class="row">
         <div class="col"><br>
-            <a routerLink="/si">
+            <a [routerLink]="['/si',paam]">
                 <div class="card col-10 bg-info">
                     <div class="card-header"><img [src]="gsi" class="gg"></div>
                     <div class="card-footer"> Gérer Systèmes d'informations</div>
@@ -30,7 +30,7 @@
             </a> 
         </div>
         <div class="col"> <br>
-            <a routerLink="/serveur">
+            <a [routerLink]="['/serveur',paam]">
                         <div class="card col-10 bg-warning">
                     <div class="card-header"><img [src]="gs" class="gg"></div>
                     <div class="card-footer">Gérer Serveurs</div>
@@ -40,7 +40,7 @@
     </div>
     <div class="row">
         <div class="col"><br>
-            <a routerLink="/logfile">
+            <a [routerLink]="['/logfile',paam]">
                                 <div class="card col-10 bg-danger">
                     <div class="card-header"><img [src]="glf" class="gg"></div>
                     <div class="card-footer"> Gérer Logs File</div>
@@ -48,10 +48,20 @@
             </a>
         </div>
         <div class="col"> <br>
-            <a routerLink="/mc">
+            <a [routerLink]="['/mc',paam]">
                                 <div class="card col-10 bg-secondary">
                     <div class="card-header"><img [src]="gmc" class="gg"></div>
                     <div class="card-footer">Gérer Mots Clés</div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6" style="margin-left: 25%;"> <br>
+            <a routerLink="/staistics">
+                <div class="card col-10 bg-muted">
+                    <div class="card-header"><img [src]="gmc" class="gg"></div>
+                    <div class="card-footer text-dark">Statistics</div>
                 </div>
             </a>
         </div>

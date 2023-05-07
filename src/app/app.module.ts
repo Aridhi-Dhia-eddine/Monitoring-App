@@ -14,7 +14,14 @@ import { FilelogComponent } from './filelog/filelog.component';
 import { LogiinComponent } from './logiin/logiin.component';
 import { MotsclesComponent } from './motscles/motscles.component';
 import { ServeursComponent } from './serveurs/serveurs.component';
+import { ReinitialisationMDPuserSmComponent } from './reinitialisation-mdpuser-sm/reinitialisation-mdpuser-sm.component';
+import { ModifierMDPComponent } from './modifier-mdp/modifier-mdp.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { JournComponent } from './journ/journ.component';
+import { NavComponent } from './nav/nav.component';
+import { ProfilComponent } from './profil/profil.component';
+import { ViewComponent } from './view/view.component';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +36,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FilelogComponent,
     LogiinComponent,
     MotsclesComponent,
-    ServeursComponent
+    ServeursComponent,
+    ModifierMDPComponent,
+    ReinitialisationMDPuserSmComponent,
+    JournComponent,
+    NavComponent,
+    ProfilComponent,
+    ViewComponent,
+    StatisticsComponent,
   ],
   imports: [
     BrowserModule,

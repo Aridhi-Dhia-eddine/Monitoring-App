@@ -1,0 +1,37 @@
+<body>
+<div class="container col-9">
+    <div class="card">
+        <div class="card-header">Alarme détails
+            <button type="button" class="btn-close" data-bs-dismiss="card" style="margin-left: 90%;" (click)="closef()"></button>
+        </div>
+        <div class="card-body">
+            <label for="email" class="form-label">mot: {{alarme.mc.mot}}</label><br>
+            <label for="email" class="form-label">designation: {{alarme.mc.designation}} </label><br>
+            <label for="email" class="form-label"> 
+                <div *ngIf="alarme.mc.niveau==0; then thenB"></div>
+                <ng-template #thenB><p style="color:rgb(30, 243, 232);">Niveau: Warning</p></ng-template>
+                <div *ngIf="alarme.mc.niveau==1; then thenBloc"></div>
+                <ng-template #thenBloc><td style="color:rgb(250, 235, 22);">Niveau: Mineurs</td></ng-template>
+                <div *ngIf="alarme.mc.niveau==2; then thenBlo"></div>
+                <ng-template #thenBlo><td style="color: rgb(243, 158, 30);">Niveau: Moyenne</td></ng-template>
+                <div *ngIf="alarme.mc.niveau==3; then thenBl"></div>
+                <ng-template #thenBl><td style="color: rgb(247, 75, 75);">Niveau: Majeur</td></ng-template> </label><br>
+            <label for="email" class="form-label">date 1ère detection: {{alarme.date}} </label><br>
+            <label for="email" class="form-label">occurence: {{alarme.occurence}} </label><br>
+            <label for="email" class="form-label">File Log: {{alarme.mc.lf.lastFile}} </label><br>
+            <label for="email" class="form-label">le chemin de fichier log: {{alarme.mc.lf.cheminAb}} </label><br>
+            <label for="email" class="form-label">nom serveur: {{alarme.mc.lf.serv.nomHost}}</label><br>
+            <label for="email" class="form-label">IP Serveur: {{alarme.mc.lf.serv.ip}}</label><br>
+            <label for="email" class="form-label">Système informations: {{alarme.mc.lf.serv.si.nom_Si}}</label><br>
+            <div *ngIf="alarme.etat==0; then thenBlock else elseBlock"></div>
+            <ng-template #thenBlock><label class="text-primary">Etat: ouverte</label><br>
+                <button class="btn btn-success col-8" style=" margin-top: 5%;" (click)="fermer(alarme)">Fermer alarme</button>
+            </ng-template>
+            <ng-template #elseBlock><label class="text-danger">Etat: Fermé</label><br>
+                
+            </ng-template>
+        </div>
+      </div>
+</div>
+</body>
+

@@ -45,13 +45,23 @@ export class FilelogComponent implements OnInit  {
   }
 
   ajoutLogs(){
+    console.log(this.lf)
     this.service.postLogs(this.lf).subscribe(data=>console.log("inserted"));
   }
 
   onSubmit(){
+    var i!:number
+    var date=""
     this.lf.serv=this.serv
     console.log(this.lf)
     console.log(this.lf.lastFile)
+    for(i=0;i<this.lf.lastFile.length;i++){
+      if(((this.lf.lastFile[i]>="0")&&(this.lf.lastFile[i]<="9"))||(this.lf.lastFile[i]=="-")){
+        date+=this.lf.lastFile[i]
+      }
+    }
+    console.log(date)
+    this.lf.c_date=date    
     this.ajoutLogs()
   }
 }

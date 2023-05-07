@@ -17,9 +17,19 @@
       <tbody>
         <tr *ngFor="let alarme of alarmes">
           <td>{{alarme.mc.designation}}</td>
-          <td>{{alarme.mc.niveau}}</td>
+          <div *ngIf="alarme.mc.niveau==0; then thenB"></div>
+          <ng-template #thenB><td style="color:rgb(30, 243, 232);">Warning</td></ng-template>
+          <div *ngIf="alarme.mc.niveau==1; then thenBloc"></div>
+          <ng-template #thenBloc><td style="color:rgb(250, 235, 22);">Mineurs</td></ng-template>
+          <div *ngIf="alarme.mc.niveau==2; then thenBlo"></div>
+          <ng-template #thenBlo><td style="color: rgb(243, 158, 30);">Moyenne</td></ng-template>
+          <div *ngIf="alarme.mc.niveau==3; then thenBl"></div>
+          <ng-template #thenBl><td style="color: rgb(247, 75, 75);">Majeur</td></ng-template>
           <td>{{alarme.mc.mot}}</td>
-          <td>ouverte</td>
+          <div *ngIf="alarme.etat==0; then thenBlock else elseBlock"></div>
+          <ng-template #thenBlock><td class="text-primary">ouverte</td></ng-template>
+          <ng-template #elseBlock><td class="text-danger">Fermé</td></ng-template>
+          <td><button class="btn btn-success" (click)="view(alarme.idalarme)">view</button></td>
         </tr>
       </tbody>
     </table>

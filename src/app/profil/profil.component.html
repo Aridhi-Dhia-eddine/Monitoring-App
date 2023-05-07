@@ -1,0 +1,37 @@
+
+<body><br>
+    
+
+<div class="container col-10">
+    <div *ngIf="alert" class="alert alert-success">
+        <strong>Success!</strong> mot de passe mise à jour avec succès
+      </div>
+    <div class="card">
+        <div class="card-header">
+          <h4>Informations Personnelles</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="card" style="margin-left: 90%;" (click)="closef()"></button>
+        </div>
+        
+        <div class="card-body">
+            <div class="mb-3 mt-3">
+                <label for="email" class="form-label">Nom: {{user.nom_user}}</label><br>
+                <label for="email" class="form-label">prenom: {{user.prenom_user}}</label><br>
+                <label for="email" class="form-label">mail: {{user.mail_user}}</label><br>
+                <label for="email" class="form-label">N°tel: {{user.num_tel}}</label><br>
+                <label for="email" class="form-label">login: {{user.login}}</label><br>
+              </div>
+              <form (ngSubmit) = "changer()">
+                <div class="mb-3 mt-3">
+                    <label for="email" class="form-label">changer mot de passe:</label>
+                    <input type="password" class="form-control" placeholder="Enter nouveau password"[(ngModel)]="pass" [ngModelOptions]="{standalone: true}">
+                  </div>
+                  <div class="mb-3 mt-3">
+                    <label for="email" class="form-label">Confirmer mot de passe:</label>
+                    <input type="password" class="form-control" placeholder="Confirmer password" [(ngModel)]="confpass" [ngModelOptions]="{standalone: true}">
+                  </div>
+                  <button type="submit" class="btn btn-primary col-6">Changer</button>
+              </form>
+        </div>
+      </div>
+</div>
+</body>
